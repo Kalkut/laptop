@@ -1,8 +1,9 @@
 @font-face {
-  font-family: 'futuraLight';
-  src: url("/Futura-Light.ttf");
-  /*src : url("/FuturaStdLight.eot") format('embedded-opentype'),
-  url("/FuturaStdLight.svg") format('svg');*/ }
+  font-family: 'futuraMedium';
+  src: url("/FuturaStdMedium.ttf");
+  src: url("/FuturaStdMedium.eot") format("embedded-opentype");
+  src: url("/FuturaStdMedium.svg") format("svg");
+  src: url("/FuturaStdMedium.otf") format("opentype"); }
 @font-face {
   font-family: "futurastd";
   src: url("/FuturaStdLight.eot");
@@ -25,19 +26,24 @@ body {
       pointer-events: initial;
       background-color: #FFFFFF;
       color: #f17f36; }
-      body .app .header .result {
-        width: 45px;
-        height: 45px;
+      body .app .header .result, body .app .header .result.on {
         right: 100px;
         position: absolute;
+        background-size: 100%; }
+      body .app .header .result {
+        background-image: url("tagcloud_off.png");
+        width: 45px;
+        height: 45px;
         top: 0;
         bottom: 0;
-        margin: auto 0;
-        background-image: url("tagcloud_off.png");
-        background-size: 100%; }
+        margin: auto 0; }
+      body .app .header .result.on {
+        background-image: url("tagcloud_on.png");
+        width: 60px;
+        height: 62px; }
       body .app .header .menu {
         width: 23px;
-        height: 23px;
+        height: 19px;
         background-size: 100%;
         position: absolute;
         left: 8px;
@@ -71,25 +77,25 @@ body {
         margin: auto;
         position: absolute;
         text-align: center;
-        font-family: 'futurastd';
+        font-family: 'futuraMedium';
         width: 240px;
         font-size: 20.5px;
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased;
         -moz-font-smoothing: antialiased; }
-    body .app .activity {
+    body .app .activity, body .app .result-display {
       width: 100%;
       height: calc(100% - 70px);
       position: absolute;
       top: 70px; }
-      body .app .activity .question {
+      body .app .activity .question, body .app .result-display .question {
         pointer-events: initial;
         background-color: #f8f8fa;
         width: 100%;
         height: 100px;
         position: absolute;
         z-index: 2; }
-        body .app .activity .question .text {
+        body .app .activity .question .text, body .app .result-display .question .text {
           top: 0;
           bottom: 0;
           display: table;
@@ -104,7 +110,7 @@ body {
           -webkit-font-smoothing: antialiased;
           font-smoothing: antialiased;
           -moz-font-smoothing: antialiased; }
-        body .app .activity .question .previous {
+        body .app .activity .question .previous, body .app .result-display .question .previous {
           background-image: url("previous.png");
           background-size: 100%;
           width: 27px;
@@ -114,7 +120,7 @@ body {
           left: 45px;
           top: 0;
           bottom: 0; }
-        body .app .activity .question .next {
+        body .app .activity .question .next, body .app .result-display .question .next {
           background-image: url("next.png");
           background-size: 100%;
           width: 27px;
@@ -133,7 +139,7 @@ body {
         left: 35px;
         top: 135px; }
         body .app .brainstorming .title-form .left-bar {
-          width: 3px;
+          width: 2px;
           height: 25px;
           background-color: #9d9d9d;
           position: absolute; }
@@ -144,12 +150,89 @@ body {
           width: 530px;
           outline: none;
           border: 0;
-          border-bottom: 3px solid #d0d0d0;
+          border-bottom: 2px solid #d0d0d0;
           position: absolute;
-          left: 3px;
+          left: 5px;
+          color: #979797;
+          padding-left: 12px; }
+        body .app .brainstorming .title-form input.add-title::-webkit-input-placeholder {
+          /* WebKit browsers */
+          color: #d0d0d0; }
+        body .app .brainstorming .title-form input.add-title:-moz-placeholder {
+          /* Mozilla Firefox 4 to 18 */
+          color: #d0d0d0;
+          opacity: 1; }
+        body .app .brainstorming .title-form input.add-title::-moz-placeholder {
+          /* Mozilla Firefox 19+ */
+          color: #d0d0d0;
+          opacity: 1; }
+        body .app .brainstorming .title-form input.add-title:-ms-input-placeholder {
+          /* Internet Explorer 10+ */
           color: #d0d0d0; }
         body .app .brainstorming .title-form .validate {
-          width: 35px;
-          height: 30px; }
+          width: 100px;
+          height: 72px;
+          position: absolute;
+          left: 538px;
+          background-image: url("tick.png");
+          background-size: 36px 30px;
+          background-position: center;
+          background-repeat: no-repeat;
+          top: 0;
+          bottom: 0;
+          margin: auto 0; }
+        body .app .brainstorming .title-form .validate.invalid {
+          opacity: 0.3; }
+      body .app .brainstorming .selctor-buttons {
+        position: absolute;
+        right: 38px;
+        width: 128px;
+        height: 36px;
+        top: 140px; }
+        body .app .brainstorming .selctor-buttons .me, body .app .brainstorming .selctor-buttons .all {
+          width: 64px;
+          height: 36px;
+          float: left; }
+          body .app .brainstorming .selctor-buttons .me .arrow, body .app .brainstorming .selctor-buttons .all .arrow {
+            height: 18px;
+            width: 64px;
+            background-image: url("arrow.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            display: none; }
+          body .app .brainstorming .selctor-buttons .me .text, body .app .brainstorming .selctor-buttons .all .text {
+            height: 18px;
+            width: 64px;
+            text-align: center;
+            font-family: "futuraMedium"; }
+        body .app .brainstorming .selctor-buttons .selected {
+          color: #f17f36; }
+          body .app .brainstorming .selctor-buttons .selected .arrow {
+            display: block; }
+      body .app .brainstorming .entries {
+        position: absolute;
+        top: 170px;
+        width: 100%;
+        height: calc(100% - 170px);
+        padding: 40px;
+        box-sizing: border-box; }
+        body .app .brainstorming .entries .post-it {
+          background-color: #f17f36;
+          float: left;
+          max-width: 250px;
+          max-height: 300px;
+          margin-right: 10px;
+          overflow: hidden;
+          white-space: pre-wrap;
+          /* CSS3 */
+          white-space: -moz-pre-wrap;
+          /* Firefox */
+          white-space: -pre-wrap;
+          /* Opera <7 */
+          white-space: -o-pre-wrap;
+          /* Opera 7 */
+          word-wrap: break-word;
+          /* IE */
+          /* http://stackoverflow.com/questions/1638223/is-there-a-way-to-word-wrap-long-words-in-a-div*/ }
 
 /*# sourceMappingURL=glob.css.map */

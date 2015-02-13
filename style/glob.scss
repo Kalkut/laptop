@@ -1,8 +1,9 @@
 @font-face {
-  font-family : 'futuraLight';
-  src : url('/Futura-Light.ttf');
-  /*src : url("/FuturaStdLight.eot") format('embedded-opentype'),
-  url("/FuturaStdLight.svg") format('svg');*/
+  font-family : 'futuraMedium';
+  src : url('/FuturaStdMedium.ttf');
+  src : url("/FuturaStdMedium.eot") format('embedded-opentype');
+  src :url("/FuturaStdMedium.svg") format('svg');
+  src: url('/FuturaStdMedium.otf') format('opentype'); 
 }
 
 @font-face {
@@ -29,20 +30,27 @@ body {
       pointer-events: initial;
       background-color: #FFFFFF;
       color: #f17f36;
+      .result,.result.on{        
+        right: 100px;
+        position: absolute;  
+        background-size: 100%;
+      }
       .result{
+        background-image: url("tagcloud_off.png");
         width: 45px;
         height: 45px;
-        right: 100px;
-        position: absolute;
         top: 0;
         bottom: 0;
         margin: auto 0;
-        background-image: url("tagcloud_off.png");
-        background-size: 100%;
+      }
+      .result.on{
+        background-image: url("tagcloud_on.png");
+        width: 60px;
+        height: 62px;
       }
       .menu{
         width: 23px;
-        height: 23px;
+        height: 19px;
         background-size: 100%;
         position: absolute;
         left: 8px;
@@ -79,7 +87,7 @@ body {
         margin: auto;
         position: absolute;
         text-align: center;
-        font-family : 'futurastd';
+        font-family : 'futuraMedium';
         width: 240px;
         font-size: 20.5px;
         -webkit-font-smoothing : antialiased;
@@ -87,7 +95,7 @@ body {
         -moz-font-smoothing : antialiased;
       } 
     }
-    .activity{
+    .activity,.result-display{
       width: 100%;
       height: calc(100% - 70px);
       position: absolute;
@@ -148,7 +156,7 @@ body {
         left : 35px;
         top :135px;
         .left-bar{
-          width : 3px;
+          width : 2px;
           height: 25px;
           background-color: #9d9d9d;
           position: absolute;
@@ -160,14 +168,94 @@ body {
           width: 530px;
           outline: none;
           border: 0;
-          border-bottom : 3px solid #d0d0d0;
+          border-bottom : 2px solid #d0d0d0;
           position: absolute;
-          left : 3px;
-          color : #d0d0d0;
+          left : 5px;
+          color : #979797;
+          padding-left: 12px;
+        }
+        input.add-title::-webkit-input-placeholder { /* WebKit browsers */
+            color:    #d0d0d0;
+        }
+        input.add-title:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+           color:    #d0d0d0;
+           opacity:  1;
+        }
+        input.add-title::-moz-placeholder { /* Mozilla Firefox 19+ */
+           color:    #d0d0d0;
+           opacity:  1;
+        }
+        input.add-title:-ms-input-placeholder { /* Internet Explorer 10+ */
+           color:    #d0d0d0;
         }
         .validate{
-          width: 35px;
-          height: 30px
+          width: 100px;
+          height: 72px;
+          position: absolute;
+          left: 538px;
+          background-image: url("tick.png");
+          background-size: 36px 30px;
+          background-position: center;
+          background-repeat: no-repeat;
+          top : 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+        .validate.invalid{
+          opacity: 0.3;
+        }
+      }
+      .selctor-buttons{
+        position: absolute;
+        right: 38px;
+        width: 128px;
+        height: 36px;
+        top : 140px;
+        .me,.all{
+          width : 64px;
+          height: 36px;
+          float: left;
+          .arrow{
+            height: 18px;
+            width : 64px;
+            background-image : url('arrow.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            display: none;
+          }
+          .text{
+            height: 18px;
+            width: 64px;
+            text-align: center;
+            font-family: 'futuraMedium'
+          }
+        }
+        .selected{
+          color: #f17f36;
+          .arrow{
+            display: block;
+          }
+        }
+      }
+      .entries{
+        position: absolute;
+        top : 170px;
+        width: 100%;
+        height : calc(100% - 170px);
+        padding: 40px;
+        box-sizing : border-box;
+        .post-it{
+          background-color: #f17f36;
+          float: left;
+          max-width: 250px;
+          max-height: 300px;
+          margin-right: 10px;
+          overflow: hidden;
+          white-space: pre-wrap;      /* CSS3 */   
+          white-space: -moz-pre-wrap; /* Firefox */    
+          white-space: -pre-wrap;     /* Opera <7 */   
+          white-space: -o-pre-wrap;   /* Opera 7 */    
+          word-wrap: break-word;      /* IE */ /* http://stackoverflow.com/questions/1638223/is-there-a-way-to-word-wrap-long-words-in-a-div*/
         }
       }
     }

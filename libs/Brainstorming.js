@@ -1,4 +1,4 @@
-sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
+sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , function (r) {
 	return r.Seed.extend({
 
 		'+init' : function (o) {
@@ -7,9 +7,14 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
 
 			this.scope = {};
 			this.app = o.app;
-			this.questions = o.questions || ["Comment faire en sorte d'avoir plus d'idée quand on veut avoir des idées ?","Facile cuius animi moribus et similis in ab eis amantur eo nisi ex parentes amant si exstitit potest amant perspicere.","Harcode2",] ;//TEMP : HARDCODE TO DELETE
+			this.questions = o.questions || [""];
 			this.questionsIndex = o.questionIndex || 0;
-			this.countDown = o.countDown;
+			this.countDown = o.countDown || 0;
+
+			this.userPostIts = o.userPostIts || 0;
+			this.allPostIts = o.allPostIts || 0;
+
+			this.publicBrainstorming = o.publicBrainstorming || false;
 
 			this.el = r.toDOM({
 				tag : ".activity.brainstorming",
@@ -22,7 +27,6 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
 							events : {
 								mouseup : function () {
 									this.previousQuestion();
-									console.log("s")
 								}.bind(this)
 							}
 						},
@@ -32,7 +36,6 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
 							events : {
 								mouseup : function () {
 									this.nextQuestion();
-									console.log("s")
 								}.bind(this)
 							}
 						}]
@@ -42,22 +45,69 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
 						children : [".left-bar",
 						{
 							tag : "input.add-title",
-							atrr : {
+							attr : {
 								placeholder : "Add Title"
+							},
+							events : {
+								keyup : function (e) {
+									this.toogleValidate();
+									if(e.keyCode == 13 && this.valueIsNotEmpty()){
+										this.appendPostIt();
+										this.updatePostItNum();
+									}
+								}.bind(this)
 							}
-						},".validate"]
+						},
+						{
+							tag : ".validate",
+							events : {
+								mouseup : function () {
+									if(this.valueIsNotEmpty()){
+										this.appendPostIt();
+										this.updatePostItNum();
+									}									
+								}.bind(this)
+							}
+						}]
 					},
 					{
 						tag : ".selctor-buttons",
-						children : [".me",".all"]
+						children : [{
+							tag : ".me",
+							children : [".text Me",".arrow"],
+							events : {
+								mouseup : function () {
+									this.toogleMe();
+								}.bind(this)
+							}
+						},
+						{
+							tag : ".all",
+							children : [".text All",".arrow"],
+							events : {
+								mouseup : function () {
+									this.toogleAll();
+								}.bind(this)
+							}
+						}]
+					},
+					{
+						tag : ".entries",
 					}]
 			},this.scope)
 
 			this.setQuestion();
+			this.updatePostItNum();
+			this.toogleMe();
 			console.log(this.scope)
+
 			$(this.el).ready(function () {
 				
 			}.bind(this))
+
+			this.result = r.toDOM({
+				tag :'.result-display.brainstorming'
+			})
 
 
 
@@ -106,9 +156,53 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM'] , function (r) {
 		plugToApp : function (app) {
 			$(document.body).ready(function () {
 				app.appendChild(this.el);
+				app.appendChild(this.result);
+				this.result.style.display = "none";
 				if(this.countDown && typeof(this.countDown) == "number") this.lauchCountdown(this.countDown);
-				else this.lauchCountdown(900000);
+				//TODO : A STRING VERSION 
 			}.bind(this))
 		},
+
+		appendPostIt : function () {
+			var postIt = new r.PostIt(this.scope["add-title"].value);
+			this.scope.entries.appendChild(postIt.el);
+			this.scope["add-title"].value = "";
+			this.userPostIts++;
+			this.allPostIts++;
+			this.toogleValidate();
+		},
+
+		updatePostItNum : function () {
+			this.scope.me.childNodes[0].innerHTML = "Me ("+ this.userPostIts + ")";
+			this.scope.all.childNodes[0].innerHTML = "All ("+ this.allPostIts + ")";
+		},
+
+		toogleAll : function () {
+			if(!this.publicBrainstorming) return;
+			else{
+				this.scope.me.className = "me";
+				this.scope.all.className = "all selected";
+			}
+		},
+
+		toogleMe : function () {
+			this.scope.me.className = "me selected";
+			this.scope.all.className = "all";
+		},
+
+		valueIsNotEmpty : function () {			
+			var value = this.scope["add-title"].value;
+			if(!value) return false;
+			var k = 0;
+			var n = value.length;
+			while(k < n){
+				if(value[k] != " ") return true;
+				else return false;
+			}
+		},
+
+		toogleValidate : function () {
+			this.valueIsNotEmpty() ? this.scope.validate.className = "validate" : this.scope.validate.className = "validate invalid";
+		}
 	})
 })
