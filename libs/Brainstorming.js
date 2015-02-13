@@ -99,6 +99,7 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 			this.setQuestion();
 			this.updatePostItNum();
 			this.toogleMe();
+			this.toogleValidate();
 			console.log(this.scope)
 
 			$(this.el).ready(function () {
