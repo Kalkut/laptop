@@ -19,7 +19,7 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*'] , function (r) {
 								this.toggleResult();
 							}.bind(this)
 						}
-					},'.line','.next-sequence']
+					},'.line','.line-background','.next-sequence']
 				},]
 			}, this.scope)
 

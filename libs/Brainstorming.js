@@ -51,10 +51,17 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 							events : {
 								keyup : function (e) {
 									this.toogleValidate();
+									this.stopCaretBlinking();
 									if(e.keyCode == 13 && this.valueIsNotEmpty()){
 										this.appendPostIt();
 										this.updatePostItNum();
 									}
+								}.bind(this),
+								blur : function (e) {
+									if(!this.scope["add-title"].value) this.blinkCaret();
+								}.bind(this),
+								focus : function (e) {
+									if(!this.scope["add-title"].value) this.stopCaretBlinking();
 								}.bind(this)
 							}
 						},
@@ -100,6 +107,9 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 			this.updatePostItNum();
 			this.toogleMe();
 			this.toogleValidate();
+			this.blinkCaret();
+			this.availableQuestion();
+
 			console.log(this.scope)
 
 			$(this.el).ready(function () {
@@ -115,16 +125,31 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 		},
 
 		nextQuestion : function () {
-						if(this.questionsIndex < this.questions.length -1) {
-							this.questionsIndex++;
-							this.setQuestion();
-						}
-					},		
+			if(this.questionsIndex < this.questions.length -1) {
+				this.questionsIndex++;
+				this.setQuestion();
+			}
+			this.availableQuestion();
+		},		
 
 		previousQuestion : function () {
 			if(this.questionsIndex > 0 ) {
 				this.questionsIndex--;
 				this.setQuestion();
+			}
+			this.availableQuestion();
+		},
+
+		availableQuestion : function () {
+			if(this.questionsIndex == 0) {
+				this.scope.previous.className = "previous unavailable";
+				this.scope.next.className = "next";
+			} else if (this.questionsIndex == this.questions.length - 1) {
+				this.scope.previous.className = "previous";
+				this.scope.next.className = "next unavailable";
+			} else {
+				this.scope.previous.className = "previous";
+				this.scope.next.className = "next";
 			}
 		},
 
@@ -204,6 +229,18 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 
 		toogleValidate : function () {
 			this.valueIsNotEmpty() ? this.scope.validate.className = "validate" : this.scope.validate.className = "validate invalid";
+		},
+
+		blinkCaret : function () {
+			this.blinking = true;
+			window.setTimeout(function () {				
+				this.scope["left-bar"].style.display == "none" ? this.scope["left-bar"].style.display = "block" : this.scope["left-bar"].style.display = "none";
+				if(this.blinking) this.blinkCaret();
+			}.bind(this),500);
+		},
+
+		stopCaretBlinking : function () {
+			this.blinking = false;			
 		}
 	})
 })

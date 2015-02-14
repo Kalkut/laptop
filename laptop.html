@@ -29,16 +29,14 @@ sand.require('View/*', function(r) {
 		activityInput : { 
 			publicBrainstorming : true, 
 			countDown : 900000,
-			questions : [' Faites défiler les questions/remarques ( 8 "slides" ) ',
-						"Ceci est l'activité Brainstorming, cette session n'est pas hardcodée, la configuration se trouve dans le script présent dans le html de la page",
-						"Les Post It sont communs à toutes les questions. Ce comportement est simple à modifier",
-						"Ils ont une taille maxi de 250px sur 300px, et une marge de 10px, ce qui dépasse est caché (changer ça est simple aussi)",
-						"On peut entrer le temps que l'on veut (en millisecondes) et le nombre de questions que l'on veut (dans un Array)",
-						"J'ai activé l'option publicBrainstorming, on peut cliquer sur All",
-						"La vue résultat (clic sur l'icone nuage de point) câche l'espace question et postIt",
-						"Elle affichera les résultats de cette activité",
-						"Je vais travailler sur la vue Agenda",
-						"A 17h !"]
+			questions : ["La ligne défile toujours comme dans un compte à rebours (va être changé suite aux remarques d'Alex)",
+						"La ligne du timer a maintenant un background gris comme la zone d'exergue (#f8f8fa)",
+						"Un espace de l'épaisseur de la ligne (3px) sépare la ligne de la zone d'exergue",
+						"Le curseur clignote si aucun charactère n'a été rentré, idem si l'on efface tout les caractères et que l'on perd le focus",
+						"Il disparait sinon",
+						"La zone d'entrée (surtout son texte) a été rapprochée du curseur",
+						" On a atteint le dernier item, l'icône a droite est grisée (transparence/opacité 50%). Même comportement à gauche au 1er item (Vérifiez donc !)"
+			]
 		}
 	});
 	document.body.appendChild(h.el);

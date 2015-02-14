@@ -71,12 +71,18 @@ body {
         margin: auto 0;
         background-image: url("next.png");
       }
-      .line {
+      .line , .line-background {
         position: absolute;
         width : 100%;
         height: 3px;
-        background-color: #f17f36;
         bottom: 0;
+      }
+      .line{
+        background-color: #f17f36;
+        z-index : 1;      
+      }
+      .line-background{
+        background-color: #f8f8fa;
       }
       .timer {
         top: 0;
@@ -97,9 +103,9 @@ body {
     }
     .activity,.result-display{
       width: 100%;
-      height: calc(100% - 70px);
+      height: calc(100% - 73px);
       position: absolute;
-      top : 70px;
+      top : 73px;
       .question{
         pointer-events: initial;
         background-color: #f8f8fa;
@@ -145,6 +151,9 @@ body {
           top : 0;
           bottom: 0;
         }
+        .unavailable{
+          opacity : 0.5;        
+        }
       }
     }
     .brainstorming{
@@ -172,7 +181,7 @@ body {
           position: absolute;
           left : 5px;
           color : #979797;
-          padding-left: 12px;
+          padding-left: 1px;
         }
         input.add-title::-webkit-input-placeholder { /* WebKit browsers */
             color:    #d0d0d0;
@@ -215,6 +224,7 @@ body {
           width : 64px;
           height: 36px;
           float: left;
+          color : #b2b2b2;
           .arrow{
             height: 18px;
             width : 64px;
@@ -245,6 +255,8 @@ body {
         padding: 40px;
         box-sizing : border-box;
         .post-it{
+          box-sizing : border-box;
+          padding : 3px;
           background-color: #f17f36;
           float: left;
           max-width: 250px;
