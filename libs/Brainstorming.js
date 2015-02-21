@@ -170,11 +170,11 @@ sand.define('activities/Brainstorming', ['Seed','DOM/toDOM','Items/PostIt'] , fu
 				easing : 'linear',
 				step : function (now,fx) {
 					//currentTime = now;
-					var timeString = Math.floor((time-now/100)/60000) + ':' + (Math.floor(((time-now/100)*time/1000)%60) > 9 ? Math.floor(((time-now/100)*time/1000)%60) : '0' + Math.floor(((time-now/100)*time/1000)%60));
+					var timeString = Math.floor(time*((100-now)/100)/60000) + ':' + (Math.floor(((time-now/100)*time/1000)%60) > 9 ? Math.floor(((time-now/100)*time/1000)%60) : '0' + Math.floor(((time-now/100)*time/1000)%60));
 					if(timer.text() != timeString){
 						timer.text(timeString)
 					} 
-					console.log()
+					
 				}
 			})
 		},
