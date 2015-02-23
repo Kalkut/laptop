@@ -26,6 +26,34 @@ body {
       pointer-events: initial;
       background-color: #FFFFFF;
       color: #f17f36; }
+      body .app .header .agenda {
+        display: none;
+        width: 385px;
+        height: 82.5%;
+        position: fixed;
+        border-right: 1px solid #979797;
+        border-bottom: 1px solid #979797;
+        z-index: 3;
+        background-color: #FFFFFF;
+        top: 15px; }
+        body .app .header .agenda .list {
+          width: 350px;
+          position: absolute;
+          margin: 0 auto;
+          left: 0;
+          right: 0; }
+          body .app .header .agenda .list .item {
+            width: 100%;
+            height: 85px;
+            padding-top: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #979797; }
+        body .app .header .agenda .add-sequence {
+          width: 350px;
+          position: absolute;
+          margin: 0 auto;
+          left: 0;
+          right: 0; }
       body .app .header .result, body .app .header .result.on {
         right: 100px;
         position: absolute;

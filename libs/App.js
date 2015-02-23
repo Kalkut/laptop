@@ -1,4 +1,4 @@
-sand.define('View/App', ['Seed','DOM/toDOM','activities/*'] , function (r) {
+sand.define('View/App', ['Seed','DOM/toDOM','activities/*','View/Agenda','Tools'] , function (r) {
 	return r.Seed.extend({
 
 		'+init' : function (o) {
@@ -11,7 +11,16 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*'] , function (r) {
 				children : [
 				{
 					tag : ".header",
-					children : ['.menu','span.timer 35:42',
+					children : [
+					{
+						tag : '.menu',
+						events : {
+							mouseup : function () {
+								this.toggleAgenda();
+								console.log("Agenda displayed");
+							}.bind(this)
+						}
+					},'span.timer 35:42',
 					{
 						tag : '.result',
 						events : {
@@ -23,25 +32,39 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*'] , function (r) {
 				},]
 			}, this.scope)
 
+
 			this.currentActivity = new r.activities.Brainstorming(o.activityInput);
 			this.currentActivity.plugToApp(this.el);
 			this.modeActivity = o.modeActivity || true;
+
+			this.agenda = new r.Agenda(o.agendaData);
+			this.agendaDisplayed = o.agendaDisplayed || false;
+
+			this.scope.header.appendChild(this.agenda.el);
 
 		},
 
 		toggleResult : function () {
 			
+			r.Tools.toggle({
+				property : "modeActivity",
+				button : this.scope.result,
+				class : "result",
+				mode1 : this.currentActivity.el,
+				mode2 : this.currentActivity.result,
+			})
+
+		},
+
+		toggleAgenda : function () {
 			
-			this.modeActivity ? this.modeActivity = false : this.modeActivity = true;
-			if(this.modeActivity) {
-				this.scope.result.className = "result";
-				this.currentActivity.result.style.display = "none";
-				this.currentActivity.el.style.display = "block";
-			} else{
-				this.scope.result.className = "result on";
-				this.currentActivity.result.style.display = "block";
-				this.currentActivity.el.style.display = "none";
-			} 
+			r.Tools.toggle({
+				property : "agendaDisplayed",
+				button : this.scope.menu,
+				class : "menu",
+				mode1 : this.agenda.el
+			})
+
 		}
 	})
 })
