@@ -263,7 +263,10 @@ body{
           font-size: 20.5px;
           -webkit-font-smoothing : antialiased;
           font-smoothing : antialiased;
-          -moz-font-smoothing : antialiased;        
+          -moz-font-smoothing : antialiased;
+          @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+            color : #979797
+          }       
         }
         .previous{
           background-image: url("prevB.png");
@@ -419,6 +422,22 @@ body{
           white-space: -o-pre-wrap;   /* Opera 7 */    
           word-wrap: break-word;      /* IE */ /* http://stackoverflow.com/questions/1638223/is-there-a-way-to-word-wrap-long-words-in-a-div*/
         }
+      }
+    }
+    .footer{
+      position: absolute;
+      bottom : 0;
+      height: 30px;
+      width: 100%;
+      .previous{
+        position: absolute;
+        left : 17px;
+        color: #979797;
+      }
+      .next{
+        position: absolute;
+        right : 17px;
+        color: #979797;
       }
     }
   }

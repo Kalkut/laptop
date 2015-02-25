@@ -29,7 +29,11 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*','View/Agenda','Tools'
 							}.bind(this)
 						}
 					},'.line','.line-background','.next-sequence']
-				},]
+				},
+				{
+					tag : '.footer',
+					children : ['.previous Précedent','.next Suivant']
+				}]
 			}, this.scope)
 
 
