@@ -203,7 +203,7 @@ body {
             font-weight: bolder; } }
     body .app .activity, body .app .result-display {
       width: 100%;
-      height: calc(100% - 73px);
+      height: calc(100% - 105px);
       position: relative;
       float: left; }
       body .app .activity .question, body .app .result-display .question {
@@ -220,7 +220,7 @@ body {
             border-top: 1px solid #dcdcdc;
             border-bottom: 1px solid #dcdcdc;
             box-sizing: border-box;
-            font-size: 32px;
+            font-size: 23px;
             color: #979797; } }
         body .app .activity .question .text, body .app .result-display .question .text {
           top: 0;
@@ -233,7 +233,7 @@ body {
           font-family: 'futurastd';
           width: 70%;
           text-align: center;
-          font-size: 20.5px;
+          font-size: 23px;
           -webkit-font-smoothing: antialiased;
           font-smoothing: antialiased;
           -moz-font-smoothing: antialiased; }
@@ -387,15 +387,16 @@ body {
       position: absolute;
       bottom: 0;
       height: 30px;
-      width: 100%; }
+      width: 100%;
+      margin-bottom: 15px; }
       body .app .footer .previous {
         position: absolute;
         left: 17px;
         color: #979797;
-        font-size: 32px; }
+        font-size: 23px; }
       body .app .footer .next {
         position: absolute;
-        font-size: 32px;
+        font-size: 23px;
         right: 17px;
         color: #979797; }
 

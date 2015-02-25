@@ -230,7 +230,7 @@ body{
     }
     .activity,.result-display{
       width: 100%;
-      height: calc(100% - 73px);
+      height: calc(100% - 105px);
       position: relative;
       float: left;
       .question{
@@ -246,7 +246,7 @@ body{
           border-top : 1px solid #dcdcdc;
           border-bottom : 1px solid #dcdcdc;
           box-sizing : border-box;
-          font-size: 32px;
+          font-size: 23px;
           color: #979797;
         }
         .text{
@@ -260,7 +260,7 @@ body{
           font-family : 'futurastd';        
           width: 70%;
           text-align: center;
-          font-size: 20.5px;
+          font-size: 23px;
           -webkit-font-smoothing : antialiased;
           font-smoothing : antialiased;
           -moz-font-smoothing : antialiased;
@@ -429,15 +429,16 @@ body{
       bottom : 0;
       height: 30px;
       width: 100%;
+      margin-bottom: 15px;
       .previous{
         position: absolute;
         left : 17px;
         color: #979797;
-        font-size: 32px;
+        font-size: 23px;
       }
       .next{
         position: absolute;
-        font-size: 32px;
+        font-size: 23px;
         right : 17px;
         color: #979797;
       }
