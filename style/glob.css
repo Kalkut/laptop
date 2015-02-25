@@ -9,6 +9,13 @@
   src: url("/FuturaStdLight.eot");
   src: url("//FuturaStdLight.svg#bingo") format("svg");
   src: url("/FuturaStdLight.otf") format("opentype"); }
+font-face {
+  font-family: "futurastdbold";
+  src: url("/FuturaBold.ttf");
+  src: url("/FuturaStdBold.eot");
+  src: url("//FuturaStdBold.svg#bingo") format("svg");
+  src: url("/FuturaStdBold.otf") format("opentype"); }
+
 body {
   margin: 0%; }
   body .app {
@@ -25,7 +32,12 @@ body {
       background-color: #FFFFFF;
       color: #f17f36;
       float: left;
-      position: relative; }
+      position: relative;
+      margin-bottom: 1px; }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        body .app .header {
+          height: 74px;
+          margin-bottom: 3px; } }
       body .app .header .agenda {
         display: none;
         width: 385px;
@@ -113,6 +125,9 @@ body {
         right: 100px;
         position: absolute;
         background-size: 100%; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .header .result, body .app .header .result.on {
+            display: none; } }
       body .app .header .result {
         background-image: url("tagcloud_off.png");
         width: 45px;
@@ -134,7 +149,11 @@ body {
         bottom: 0;
         margin: auto 0;
         margin-right: 50px;
-        background-image: url("menu.png"); }
+        background-image: url("menuOff.png"); }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .header .menu {
+            width: 60px;
+            height: 60px; } }
       body .app .header .next-sequence {
         width: 23px;
         height: 23px;
@@ -144,7 +163,11 @@ body {
         top: 0;
         bottom: 0;
         margin: auto 0;
-        background-image: url("next.png"); }
+        background-image: url("nextI.png"); }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .header .next-sequence {
+            width: 60px;
+            height: 60px; } }
       body .app .header .line, body .app .header .line-background {
         position: absolute;
         height: 3px;
@@ -171,6 +194,13 @@ body {
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased;
         -moz-font-smoothing: antialiased; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .header .timer {
+            font-family: 'futurastdbold';
+            -webkit-font-smoothing: initial;
+            font-smoothing: initial;
+            -moz-font-smoothing: initial;
+            font-weight: bolder; } }
     body .app .activity, body .app .result-display {
       width: 100%;
       height: calc(100% - 73px);
@@ -184,6 +214,14 @@ body {
         z-index: 2;
         position: relative;
         float: left; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .activity .question, body .app .result-display .question {
+            height: 101px;
+            border-top: 1px solid #dcdcdc;
+            border-bottom: 1px solid #dcdcdc;
+            box-sizing: border-box;
+            font-size: 32px;
+            color: #979797; } }
         body .app .activity .question .text, body .app .result-display .question .text {
           top: 0;
           bottom: 0;
@@ -200,7 +238,7 @@ body {
           font-smoothing: antialiased;
           -moz-font-smoothing: antialiased; }
         body .app .activity .question .previous, body .app .result-display .question .previous {
-          background-image: url("previous.png");
+          background-image: url("prevB.png");
           background-size: 100%;
           width: 27px;
           height: 27px;
@@ -209,8 +247,12 @@ body {
           left: 45px;
           top: 0;
           bottom: 0; }
+          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            body .app .activity .question .previous, body .app .result-display .question .previous {
+              width: 60px;
+              height: 60px; } }
         body .app .activity .question .next, body .app .result-display .question .next {
-          background-image: url("next.png");
+          background-image: url("nextB.png");
           background-size: 100%;
           width: 27px;
           height: 27px;
@@ -219,6 +261,10 @@ body {
           right: 45px;
           top: 0;
           bottom: 0; }
+          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            body .app .activity .question .next, body .app .result-display .question .next {
+              width: 60px;
+              height: 60px; } }
         body .app .activity .question .unavailable, body .app .result-display .question .unavailable {
           opacity: 0.5; }
     body .app .brainstorming {
@@ -229,6 +275,9 @@ body {
         position: absolute;
         left: 35px;
         top: 135px; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .brainstorming .title-form {
+            display: none; } }
         body .app .brainstorming .title-form .left-bar {
           width: 2px;
           height: 25px;
@@ -280,6 +329,9 @@ body {
         width: 128px;
         height: 36px;
         top: 140px; }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+          body .app .brainstorming .selctor-buttons {
+            display: none; } }
         body .app .brainstorming .selctor-buttons .me, body .app .brainstorming .selctor-buttons .all {
           width: 64px;
           height: 36px;

@@ -37,10 +37,10 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*','View/Agenda','Tools'
 			this.currentActivity.plugToApp(this.el);
 			this.modeActivity = o.modeActivity || true;
 
-			this.agenda = new r.Agenda(o.agendaData);
+			/*this.agenda = new r.Agenda(o.agendaData);
 			this.agendaDisplayed = o.agendaDisplayed || false;
 
-			this.scope.header.appendChild(this.agenda.el);
+			this.scope.header.appendChild(this.agenda.el);*/
 
 		},
 
