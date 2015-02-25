@@ -20,7 +20,7 @@ sand.define('View/App', ['Seed','DOM/toDOM','activities/*','View/Agenda','Tools'
 								console.log("Agenda displayed");
 							}.bind(this)
 						}
-					},'span.timer 35:42',
+					},'span.timer',
 					{
 						tag : '.result',
 						events : {

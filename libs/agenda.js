@@ -10,51 +10,66 @@ sand.define('View/Agenda',['Seed','DOM/toDOM','Tools'], function (r) {
 				children : ['.title','.list',
 				{ 
 					tag : '.add-sequence',
-					children : ['.picto','.text Ajouter séquence',
+					children : [{
+						tag : '.picto',
+						events : {
+							mouseup : this.editMode.bind(this)
+						}
+					},
 					{
-						tag : 'dropdown',
+						tag : '.text Ajouter séquence',
+						events : {
+							mouseup : this.editMode.bind(this)
+						}
+					},
+					{
+						tag : '.dropdown',
 						children : [
 						{
 							tag : '.drop-button',
-							children : ['.text','.picto'],
+							children : ['.text Choisir activité','.drop-picto'],
 							events : {
-								mouseup : function () {
-									this.dropdownIsHidden() ? this.showDropdown() : this.hideDropdown();
-								}.bind(this)
+								mouseup : this.showOrHideDropList.bind(this)
 							}
 						},'input.time','.droplist'],
 					}],
-					events : {
-						mouseup : function () {
-
-							this.toogleEditMode() // Don't forget to deal with this man
-
-						}.bind(this)
-					}
 				},
 				]
-			})
+			},this.scope);
 
 			this.activities = parameters.activities || [];
 			this.idleMode = true;
-			this.addPicto = $(this.scope['add-sequence']).children('.picto')[0];;
+			this.addPicto = $(this.scope['add-sequence']).children('.picto')[0];
+			this.initDropDown();
 		},
 
 		toogleEditMode : function () {
 
-			r.Tools.toogle({
+			r.Tools.toggle({
 				property : "idleMode",
-				mode1 : this.scope['add-sequence'].text,
-				mode2 : this.scope.dropdown
+				mode1 : this.scope.dropdown,
+				mode2 : $(this.scope['add-sequence']).children('.text')[0],
 			});
+
+			this.pointerEventsHandle();
+
+			console.log($(this.scope['add-sequence']).children('.text')[0]);
+			console.log(this.scope.dropdown);
+			console.log(this.idleMode);
 
 		},
 
+		pointerEventsHandle : function () {
+			this.dropdownIsHidden() ? this.scope["add-sequence"].style.pointerEvents = "all" : this.scope["add-sequence"].style.pointerEvents = "none";
+		},
+
 		showDropdown : function () {
+			
 			$(this.scope.droplist).show();
 		},
 
 		hideDropdown : function () {
+			
 			$(this.scope.droplist).hide();
 		},
 
@@ -69,10 +84,7 @@ sand.define('View/Agenda',['Seed','DOM/toDOM','Tools'], function (r) {
 
 				this.scope.droplist.appendChild(r.Tools.createCliquableItem({
 					children : ['.text ' + activities[i]],
-					callback : function () {
-						this.hideDropdown();
-						$(this.scope['drop-button']).children('.text').text(text);
-					}.bind(this)
+					callback : function (text) { return function () {this.newActivitySelection(text)}.bind(this)}.bind(this)(activities[i])
 				}))
 
 			}
@@ -91,13 +103,11 @@ sand.define('View/Agenda',['Seed','DOM/toDOM','Tools'], function (r) {
 		},
 
 		pictoAnimate : function () {
-			var sign;
-			this.idleMode ? sign = -1 : sign = 1;
+			var deg;
+			this.idleMode ? deg = 0 : deg = 45;
 			
-			$(this.scope['add-sequence'].picto).animate({
-				"-ms-transform": "rotate(" + sign*45 + "deg)", /* IE 9 */
-			    "-webkit-transform": "rotate(" + sign*45 + "deg)", /* Chrome, Safari, Opera */
-			    "transform": "rotate(" + sign*45 + "deg)",
+			$(this.scope['add-sequence']).children('.picto').animate({
+			    "transform": "rotate(" + deg + "deg)",
 			})
 		},
 
@@ -126,6 +136,23 @@ sand.define('View/Agenda',['Seed','DOM/toDOM','Tools'], function (r) {
 
 		getLastVisibleIndex : function () {
 			return $(this.scope.list).children().length;
+		},
+
+		newActivitySelection : function (text) {
+			console.log("go");
+			this.hideDropdown();
+			$(this.scope['drop-button']).children('.text').text(text);
+			console.log(text);
+		},
+
+		editMode : function () {
+			this.toogleEditMode();
+			this.pictoAnimate();
+		},
+
+		showOrHideDropList : function () {
+			this.dropdownIsHidden() ? this.showDropdown() : this.hideDropdown();
+			console.log("dropButton");
 		}
 
 
