@@ -391,9 +391,11 @@ body {
       body .app .footer .previous {
         position: absolute;
         left: 17px;
-        color: #979797; }
+        color: #979797;
+        font-size: 32px; }
       body .app .footer .next {
         position: absolute;
+        font-size: 32px;
         right: 17px;
         color: #979797; }
 
