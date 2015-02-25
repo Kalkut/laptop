@@ -247,7 +247,7 @@ body {
           height: 27px;
           position: absolute;
           margin: auto 0;
-          left: 45px;
+          left: 55px;
           top: 0;
           bottom: 0; }
           @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -261,7 +261,7 @@ body {
           height: 27px;
           position: absolute;
           margin: auto 0;
-          right: 45px;
+          right: 55px;
           top: 0;
           bottom: 0; }
           @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
