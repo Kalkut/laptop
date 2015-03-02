@@ -41,6 +41,37 @@ body {
     top: 0;
     bottom: 0;
     border-radius: 15px 15px; }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+      body .pop-in {
+        width: calc(100% - 20px);
+        /* 0.47 / 1.37 = 0.34*/
+        height: calc(568px * 0.477);
+        border-radius: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 10px;
+        bottom: initial; } }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+      body .pop-in {
+        width: calc(100% - 20px);
+        height: calc(667px * 0.477);
+        border-radius: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 10px;
+        bottom: initial; } }
+    @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+      body .pop-in {
+        width: calc(100% - 20px);
+        height: calc(480px * 0.477);
+        border-radius: 0;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        top: 10px;
+        bottom: initial; } }
     body .pop-in .content {
       width: 100%;
       height: 100%; }
@@ -50,6 +81,15 @@ body {
         height: 163px;
         margin-bottom: 30px;
         width: 100%; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+          body .pop-in .content .picto-wrap {
+            height: calc(480px * 0.477 * 0.27); } }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+          body .pop-in .content .picto-wrap {
+            height: calc(480px * 0.477 * 0.27); } }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+          body .pop-in .content .picto-wrap {
+            height: calc(480px * 0.477 * 0.27); } }
         body .pop-in .content .picto-wrap .picto {
           position: absolute;
           width: 163px;
@@ -59,6 +99,18 @@ body {
           background-size: 100%;
           left: 0;
           right: 0; }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+            body .pop-in .content .picto-wrap .picto {
+              width: calc(480px * 0.477 * 0.27);
+              height: calc(480px * 0.477 * 0.27); } }
+          @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+            body .pop-in .content .picto-wrap .picto {
+              width: calc(480px * 0.477 * 0.27);
+              height: calc(480px * 0.477 * 0.27); } }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            body .pop-in .content .picto-wrap .picto {
+              width: calc(480px * 0.477 * 0.27);
+              height: calc(480px * 0.477 * 0.27); } }
       body .pop-in .content .text {
         text-align: center;
         height: 80px;
@@ -71,6 +123,24 @@ body {
         line-height: 18px;
         position: absolute;
         margin-top: 30px; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+          body .pop-in .content .text {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 16px;
+            line-height: 16px; } }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+          body .pop-in .content .text {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 16px;
+            line-height: 16px; } }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+          body .pop-in .content .text {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 16px;
+            line-height: 16px; } }
       body .pop-in .content .footer {
         height: 60px;
         border-top: 1px solid #dcdcdc;
@@ -78,25 +148,66 @@ body {
         bottom: 0;
         width: 100%;
         color: #a3a3a3; }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+          body .pop-in .content .footer {
+            border: 0;
+            height: 50px; } }
+        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+          body .pop-in .content .footer {
+            border: 0;
+            height: 50px; } }
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+          body .pop-in .content .footer {
+            border: 0;
+            height: 50px; } }
         body .pop-in .content .footer .left {
           width: 50%;
           text-align: left;
           padding-left: 20px;
           left: 0;
-          line-height: 60px;
-          position: absolute;
-          box-sizing: border-box;
-          font-size: 18px; }
-        body .pop-in .content .footer .right {
-          width: 50%;
-          text-align: right;
-          padding-right: 20px;
-          right: 0;
-          line-height: 60px;
           position: absolute;
           box-sizing: border-box;
           font-size: 18px;
-          color: #f17f36; }
+          height: 100%;
+          align-items: center;
+          display: flex; }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+            body .pop-in .content .footer .left {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
+          @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+            body .pop-in .content .footer .left {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            body .pop-in .content .footer .left {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
+        body .pop-in .content .footer .right {
+          width: 50%;
+          height: 100%;
+          text-align: right;
+          padding-right: 20px;
+          right: 0;
+          position: absolute;
+          box-sizing: border-box;
+          font-size: 100%;
+          color: #f17f36;
+          align-items: center;
+          display: flex;
+          justify-content: flex-end; }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+            body .pop-in .content .footer .right {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
+          @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+            body .pop-in .content .footer .right {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
+          @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            body .pop-in .content .footer .right {
+              font-size: 16px;
+              background-color: #f8f8fa; } }
         body .pop-in .content .footer .center {
           width: 100%; }
   body .box:before {
