@@ -8,8 +8,7 @@
   font-family: "futurastd";
   src: url("/FuturaStdLight.ttf");
   src: url("/FuturaStdLight.eot") format("embedded-opentype");
-  src: url("/FuturaStdLight.svg#bingo") format("svg");
-  src: url("/FuturaStdLight.otf") format("opentype"); }
+  src: url("/FuturaStdLight.svg#bingo") format("svg"); }
 font-face {
   font-family: "futurastdbold";
   src: url("/FuturaBold.ttf");
