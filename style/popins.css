@@ -17,87 +17,92 @@ font-face {
   src: url("/FuturaStdBold.svg#bingo") format("svg");
   src: url("/FuturaStdBold.otf") format("opentype"); }
 
-body .surlayer {
-  background-color: #000000;
-  opacity: 0.2;
+body {
+  margin: 0;
   width: 100%;
-  height: 100%;
-  position: absolute; }
-body .pop-in {
-  font-family: futurastd;
-  opacity: 1;
-  z-index: 2;
-  background-color: #FFFFFF;
-  width: 607px;
-  height: 350px;
-  position: absolute;
-  margin: auto auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  border-radius: 15px 15px; }
-  body .pop-in .content {
+  height: 100%; }
+  body .surlayer {
+    background-color: #000000;
+    opacity: 0.2;
     width: 100%;
-    height: 100%; }
-    body .pop-in .content .picto-wrap {
-      top: 20px;
-      position: relative;
-      height: 163px;
-      margin-bottom: 36px;
-      width: 100%; }
-      body .pop-in .content .picto-wrap .picto {
-        position: absolute;
-        width: 163px;
+    height: 100%;
+    position: absolute; }
+  body .pop-in {
+    font-family: futurastd;
+    opacity: 1;
+    z-index: 2;
+    background-color: #FFFFFF;
+    width: 607px;
+    height: 350px;
+    position: absolute;
+    margin: auto auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 15px 15px; }
+    body .pop-in .content {
+      width: 100%;
+      height: 100%; }
+      body .pop-in .content .picto-wrap {
+        top: 20px;
+        position: relative;
         height: 163px;
-        margin: 0 auto;
-        background-image: url("pause.png");
-        background-size: 100%;
-        left: 0;
-        right: 0; }
-    body .pop-in .content .text {
-      text-align: center;
-      float: left;
-      height: 80px;
-      width: 100%;
-      padding-left: 125px;
-      padding-right: 125px;
-      box-sizing: border-box;
-      color: #a3a3a3;
-      font-size: 18px;
-      line-height: 18px; }
-    body .pop-in .content .footer {
-      height: 60px;
-      border-top: 1px solid #dcdcdc;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      color: #a3a3a3; }
-      body .pop-in .content .footer .left {
-        width: 50%;
-        text-align: left;
-        padding-left: 20px;
-        left: 0;
-        line-height: 60px;
-        position: absolute;
-        box-sizing: border-box;
-        font-size: 18px; }
-      body .pop-in .content .footer .right {
-        width: 50%;
-        text-align: right;
-        padding-right: 20px;
-        right: 0;
-        line-height: 60px;
-        position: absolute;
-        box-sizing: border-box;
-        font-size: 18px;
-        color: #f17f36; }
-      body .pop-in .content .footer .center {
+        margin-bottom: 30px;
         width: 100%; }
-body .box:before {
-  content: "";
-  display: block;
-  padding-top: 58%;
-  /* initial ratio of 1:1*/ }
+        body .pop-in .content .picto-wrap .picto {
+          position: absolute;
+          width: 163px;
+          height: 163px;
+          margin: 0 auto;
+          background-image: url("pause.png");
+          background-size: 100%;
+          left: 0;
+          right: 0; }
+      body .pop-in .content .text {
+        text-align: center;
+        height: 80px;
+        width: 100%;
+        padding-left: 125px;
+        padding-right: 125px;
+        box-sizing: border-box;
+        color: #a3a3a3;
+        font-size: 18px;
+        line-height: 18px;
+        position: absolute;
+        margin-top: 30px; }
+      body .pop-in .content .footer {
+        height: 60px;
+        border-top: 1px solid #dcdcdc;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #a3a3a3; }
+        body .pop-in .content .footer .left {
+          width: 50%;
+          text-align: left;
+          padding-left: 20px;
+          left: 0;
+          line-height: 60px;
+          position: absolute;
+          box-sizing: border-box;
+          font-size: 18px; }
+        body .pop-in .content .footer .right {
+          width: 50%;
+          text-align: right;
+          padding-right: 20px;
+          right: 0;
+          line-height: 60px;
+          position: absolute;
+          box-sizing: border-box;
+          font-size: 18px;
+          color: #f17f36; }
+        body .pop-in .content .footer .center {
+          width: 100%; }
+  body .box:before {
+    content: "";
+    display: block;
+    padding-top: 58%;
+    /* initial ratio of 1:1*/ }
 
 /*# sourceMappingURL=popins.css.map */

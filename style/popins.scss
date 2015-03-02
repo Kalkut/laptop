@@ -23,6 +23,9 @@ font-face{
 }
 
 body {
+  margin : 0;
+  width: 100%;
+  height: 100%;
 .surlayer{
   background-color: #000000;
   opacity: 0.2;
@@ -51,7 +54,7 @@ body {
       top: 20px;
       position : relative;
       height: 163px;
-      margin-bottom: 36px;
+      margin-bottom: 30px;
       width: 100%;
       .picto{
         position : absolute;
@@ -65,8 +68,7 @@ body {
       }
     }
     .text{
-      text-align: center;
-      float: left;
+      text-align: center;;
       height: 80px;
       width: 100%;
       padding-left : 125px;
@@ -75,6 +77,8 @@ body {
       color : #a3a3a3;
       font-size: 18px;
       line-height: 18px;
+      position : absolute;
+      margin-top: 30px;
     }
     .footer{
       height: 60px;

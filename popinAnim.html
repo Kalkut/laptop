@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>PopIn User</title>
+  <title>PopIn Anim</title>
   <link rel="stylesheet" href="/popins.css"></link>
 </meta>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
@@ -65,16 +65,16 @@ var animText = {
 }
 
 var index = 0;
-var properties =  ["start","pause","end"];
+var properties =  ["start","newSequence","pause","end"];
 
 sand.require('View/*', function (r) {
-	h = new r.View.PopIn(userText[properties[index]]);
+	h = new r.View.PopIn(animText[properties[index]]);
 	document.body.appendChild(h.el);
 
 	$(document.body).on('tap',function () {
 		document.body.removeChild(h.el);
 		index + 1 == properties.length ? index = 0 : index++;
-		h = new r.View.PopIn(userText[properties[index]]);
+		h = new r.View.PopIn(animText[properties[index]]);
 		document.body.appendChild(h.el);
 	})
 
