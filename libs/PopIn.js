@@ -21,10 +21,10 @@ sand.define('View/PopIn',['Seed','DOM/toDOM'], function (r) {
 				}]
 			}, this.scope)
 
-			if(!obj.left && !obj.right) this.scope.footer.display = "none";
-			else if (!obj.left) this.scope.left.display = "none";
-			else if (!obj.right) this.scope.right.display = "none";
-			
+			if(!obj.left && !obj.right) this.scope.footer.style.display = "none";
+			else if (!obj.left) this.scope.left.style.display = "none";
+			else if (!obj.right) this.scope.right.style.display = "none";
+
 		}
 	})
 })
