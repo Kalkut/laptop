@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PopIn</title>
+  <link rel="stylesheet" href="/popins.css"></link>
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+</head>
+<body>
+
+<script src="/jquery.js"></script>
+<script src="/jquerymobile.js"></script>
+<script src="/sand.min.js"></script>
+<script src="/DOM.min.js"></script>
+<script src="/Seed.js"></script>
+<script src="/core.min.js"></script>
+<script src="/prototypes.js"></script>
+<script src="/toDOM.js"></script>
+<script src="/App.js"></script>
+<script src="/Brainstorming.js"></script>
+<script src="/PostIt.js"></script>
+<script src="/Tools.js"></script>
+<script src="/agenda.js"></script>
+<script src="/PopIn.js"></script>
+
+<script type="text/javascript">
+
+var h;
+
+sand.require('View/*', function (r) {
+	h = new r.View.PopIn({ text : "Ceci est un texte suffisament long pour montrer qu'il est centré et qu'il retourne à la ligne.", right : "valider", left : "annuler"});
+	document.body.appendChild(h.el);
+})
+
+</script>
+	
+	
+
+</body>
+</html>
