@@ -8,7 +8,8 @@
   font-family: "futurastd";
   src: url("/FuturaStdLight.ttf");
   src: url("/FuturaStdLight.eot") format("embedded-opentype");
-  src: url("/FuturaStdLight.svg#bingo") format("svg"); }
+  src: url("/FuturaStdLight.svg#bingo") format("svg");
+  src: url("/FuturaStdLight.otf") format("opentype"); }
 font-face {
   font-family: "futurastdbold";
   src: url("/FuturaBold.ttf");
@@ -19,7 +20,8 @@ font-face {
 .gate {
   width: 100%;
   height: 100%;
-  position: absolute; }
+  position: absolute;
+  font-family: 'futurastd'; }
   .gate .lobby {
     float: left;
     height: 100%;
