@@ -1,0 +1,53 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Brainstorm Wpro</title>
+  <link rel="stylesheet" href="/glob.css"></link>
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+</head>
+<body>
+
+<script src="/jquery.js"></script>
+<script src="/jquerymobile.js"></script>
+<script src="/sand.min.js"></script>
+<script src="/DOM.min.js"></script>
+<script src="/Seed.js"></script>
+<script src="/core.min.js"></script>
+<script src="/prototypes.js"></script>
+<script src="/toDOM.js"></script>
+<script src="/App.js"></script>
+<script src="/Brainstorming.js"></script>
+<script src="/PostIt.js"></script>
+<script src="/Tools.js"></script>
+<script src="/agenda.js"></script>
+
+<script type="text/javascript">
+
+var h;
+
+sand.require('View/*', function(r) {
+	h = new r.View.App({
+		activityInput : { 
+			publicBrainstorming : true, 
+			countDown : 900000,
+			questions : ["La ligne défile  de gauche a droite",
+						"Un espace de l'épaisseur de la ligne (3px) sépare la ligne de la zone d'exergue",
+						"Le curseur clignote si aucun charactère n'a été rentré, idem si l'on efface tout les caractères et que l'on perd le focus",
+						"Il disparait sinon",
+						"La zone d'entrée (surtout son texte) a été rapprochée du curseur",
+						" On a atteint le dernier item, l'icône a droite est grisée (transparence/opacité 50%). Même comportement à gauche au 1er item"
+			]
+		},
+		agendaData : {
+			activities : ["Marché aux idées","Idées en vrac","Autour du tableau"],
+		}
+	});
+	document.body.appendChild(h.el);
+})
+</script>
+	
+	
+
+</body>
+</html>

@@ -280,7 +280,7 @@ body {
         top: 135px; }
         @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
           body .app .brainstorming .title-form {
-            display: none; } }
+            width: 300px; } }
         body .app .brainstorming .title-form .left-bar {
           width: 2px;
           height: 25px;
@@ -298,6 +298,9 @@ body {
           left: 5px;
           color: #979797;
           padding-left: 1px; }
+          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            body .app .brainstorming .title-form input.add-title {
+              width: 250px; } }
         body .app .brainstorming .title-form input.add-title::-webkit-input-placeholder {
           /* WebKit browsers */
           color: #d0d0d0; }
@@ -324,6 +327,9 @@ body {
           top: 0;
           bottom: 0;
           margin: auto 0; }
+          @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+            body .app .brainstorming .title-form .validate {
+              left: 250px; } }
         body .app .brainstorming .title-form .validate.invalid {
           opacity: 0.3; }
       body .app .brainstorming .selctor-buttons {
@@ -332,9 +338,6 @@ body {
         width: 128px;
         height: 36px;
         top: 140px; }
-        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-          body .app .brainstorming .selctor-buttons {
-            display: none; } }
         body .app .brainstorming .selctor-buttons .me, body .app .brainstorming .selctor-buttons .all {
           width: 64px;
           height: 36px;
@@ -388,7 +391,11 @@ body {
       bottom: 0;
       height: 30px;
       width: 100%;
+      display: none;
       margin-bottom: 15px; }
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        body .app .footer {
+          display: block; } }
       body .app .footer .previous {
         position: absolute;
         left: 17px;

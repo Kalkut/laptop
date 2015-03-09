@@ -312,7 +312,7 @@ body{
         left : 35px;
         top :135px;
         @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
-          display: none;
+          width: 300px;
         }
         .left-bar{
           width : 2px;
@@ -332,6 +332,9 @@ body{
           left : 5px;
           color : #979797;
           padding-left: 1px;
+          @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+            width: 250px;
+          }
         }
         input.add-title::-webkit-input-placeholder{ /* WebKit browsers */
             color:    #d0d0d0;
@@ -359,6 +362,9 @@ body{
           top : 0;
           bottom: 0;
           margin: auto 0;
+          @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+            left: 250px;
+          }
         }
         .validate.invalid{
           opacity: 0.3;
@@ -371,7 +377,6 @@ body{
         height: 36px;
         top : 140px;
         @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
-          display: none;
         }
         .me,.all{
           width : 64px;
@@ -429,7 +434,11 @@ body{
       bottom : 0;
       height: 30px;
       width: 100%;
+      display: none;
       margin-bottom: 15px;
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+        display: block;
+      }
       .previous{
         position: absolute;
         left : 17px;
