@@ -166,7 +166,8 @@ body {
               height: calc(480px * 0.477 * 0.27);
               width: calc(480px * 0.477 * 0.27); } }
       body .pop-in .content .text {
-        text-align: center;
+        display: flex;
+        align-items: center;
         height: 80px;
         width: 100%;
         padding-left: 125px;
@@ -176,7 +177,8 @@ body {
         font-size: 18px;
         line-height: 18px;
         position: absolute;
-        margin-top: 30px; }
+        text-align: center;
+        justify-content: center; }
         @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
           body .pop-in .content .text {
             padding-left: 10px;
@@ -195,22 +197,9 @@ body {
             padding-right: 10px;
             font-size: 16px;
             line-height: 16px; } }
-        @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
-          body .pop-in .content .text {
-            /*Iphone 6*/
-            margin-top: 15px; } }
-        @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
-          body .pop-in .content .text {
-            /*Iphone 5*/
-            margin-top: 15px; } }
-        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
-          body .pop-in .content .text {
-            /*Iphone 2 ├á 4*/
-            margin-top: 15px; } }
         @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
           body .pop-in .content .text {
             /*Iphone 6plus */
-            margin-top: 25px;
             padding-right: 10px;
             padding-left: 10px; } }
       body .pop-in .content .footer {

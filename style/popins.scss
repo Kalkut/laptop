@@ -167,7 +167,8 @@ body {
       }
     }
     .text{
-      text-align: center;;
+      display: flex;
+      align-items : center;
       height: 80px;
       width: 100%;
       padding-left : 125px;
@@ -177,7 +178,8 @@ body {
       font-size: 18px;
       line-height: 18px;
       position : absolute;
-      margin-top: 30px;
+      text-align: center;
+      justify-content: center;
       @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
         padding-left : 10px;
         padding-right : 10px;
@@ -196,17 +198,7 @@ body {
         font-size : 16px;
         line-height: 16px;
       }
-      @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { /*Iphone 6*/
-        margin-top: 15px;
-      }
-      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) { /*Iphone 5*/
-        margin-top: 15px;
-      }
-      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) { /*Iphone 2 à 4*/
-        margin-top: 15px;
-      }
       @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) { /*Iphone 6plus */
-        margin-top: 25px;
         padding-right : 10px;
         padding-left : 10px;
       }
