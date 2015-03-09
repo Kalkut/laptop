@@ -1,0 +1,42 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gates</title>
+  <link rel="stylesheet" href="/gates.css"></link>
+</meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+</head>
+<body>
+<script src="/jquery.js"></script>
+<script src="/jquerymobile.js"></script>
+<script src="/sand.min.js"></script>
+<script src="/DOM.min.js"></script>
+<script src="/Seed.js"></script>
+<script src="/core.min.js"></script>
+<script src="/prototypes.js"></script>
+<script src="/toDOM.js"></script>
+<script src="/gate.js"></script>
+
+<script type="text/javascript">
+	var images = [{className : "market", title : "1. Marché aux idées",instruction : "instruction market"},{className :"brainstorm", instruction : "instruction brainstorm", title : "2. Des idées en vrac"},{className : "story", title : "3. Raconte moi une histoire", instruction : "instruction histoire", index : "3"},{className : "tableau", title : "4. Séquence tableau", instruction : "instruction séquence tableau"}]
+	var index = 0;
+	
+
+	sand.require('View/*', function (r) {
+		h = new r.View.Gate(images[index]);
+		document.body.appendChild(h.el);
+
+		$("body").on('tap',function () {
+			document.body.removeChild(h.el);
+			index + 1 == images.length ? index = 0 : index++;
+			h = new r.View.Gate(images[index]);
+			document.body.appendChild(h.el);
+		})
+
+	})
+
+	$('.left,.middle,.right').hide();
+
+</script>
+</body>
+</html>
