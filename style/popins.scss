@@ -35,6 +35,10 @@ body {
 }
 .pop-in{
   font-family: futurastd;
+  -webkit-font-smoothing : antialiased;
+  font-smoothing : antialiased;
+  -moz-font-smoothing : antialiased;
+  font-weight: lighter;
   opacity: 1;
   z-index: 2;
   background-color : #FFFFFF;
@@ -47,10 +51,13 @@ body {
   top : 0;
   bottom : 0;
   border-radius: 15px 15px;
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) { 
+    bottom : initial;
+    top : 80.5px;
+  }
   @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
     width : calc(100% - 20px);/* 0.47 / 1.37 = 0.34*/
-    height: calc(568px * 0.477);
-    border-radius : 0;
+    height: calc(568px * 0.52);
     margin: 0 auto;
     left : 0;
     right: 0;
@@ -59,8 +66,7 @@ body {
   }
   @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
     width : calc(100% - 20px);
-    height: calc(667px * 0.477);
-    border-radius : 0;
+    height: calc(667px * 0.52);
     margin: 0 auto;
     left : 0;
     right: 0;
@@ -70,7 +76,6 @@ body {
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
     width : calc(100% - 20px);
     height: calc(480px * 0.477);
-    border-radius : 0;
     margin: 0 auto;
     left : 0;
     right: 0;
@@ -80,7 +85,6 @@ body {
   @media only screen and (min-device-width : 414px) and (max-device-width : 736px) {
     width : calc(100% - 20px);
     height: calc(414px * 0.477);
-    border-radius : 0;
     margin: 0 auto;
     left : 0;
     right: 0;
@@ -88,8 +92,8 @@ body {
     bottom : initial;
   }
   @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) { /*Iphone 6*/
-    width : 375px;
-    height: calc(375px * 0.477);
+    width : 400px;
+    height: calc(400px * 0.52);
     margin: auto auto;
     left : 0;
     right: 0;
@@ -97,8 +101,8 @@ body {
     bottom : 0;
   }
   @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) { /*Iphone 5*/
-    width : 320px;
-    height: calc(320px * 0.477);
+    width : 400px;
+    height: calc(400px * 0.5);
     margin: auto auto;
     left : 0;
     right: 0;
@@ -106,23 +110,13 @@ body {
     bottom : 0;
   }
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) { /*Iphone 2 à 4*/
-    width : 320px;
-    height: calc(320px * 0.477);
+    width : 420px;
+    height: calc(420px * 0.477);
     margin: auto auto;
     left : 0;
     right: 0;
     top : 0;
     bottom : 0;
-  }
-  @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) { /*Iphone 6plus */
-    width : 500px;
-    height: calc(500px * 0.477);
-    margin: auto auto;
-    left : 0;
-    right: 0;
-    top : 0;
-    bottom : 0;
-    border-radius: 0px 0px;
   }
   .content{
     width : 100%;
@@ -225,15 +219,12 @@ body {
       width: 100%;
       color: #a3a3a3;
       @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
-        border : 0;
         height: 50px;
       }
       @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
-        border : 0;
         height: 50px;
       }
       @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
-        border : 0;
         height: 50px;
       }
       .left{
@@ -249,16 +240,13 @@ body {
         display: flex;
         @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
         }
         @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
 
         }
         @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
         }
       }
       .right{
@@ -276,15 +264,12 @@ body {
         justify-content : flex-end;
         @media only screen and (min-device-width : 320px) and (max-device-width : 568px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
         }
         @media only screen and (min-device-width : 375px) and (max-device-width : 667px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
         }
         @media only screen and (min-device-width : 320px) and (max-device-width : 480px) { 
           font-size: 16px;
-          background-color : #f8f8fa;
         }
       }
       .center{

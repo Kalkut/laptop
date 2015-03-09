@@ -25,6 +25,8 @@ sand.define('View/PopIn',['Seed','DOM/toDOM'], function (r) {
 			else if (!obj.left) this.scope.left.style.display = "none";
 			else if (!obj.right) this.scope.right.style.display = "none";
 
+			if(obj.picto) this.scope.picto.style.backgroundImage = obj.picto;
+
 		}
 	})
 })
