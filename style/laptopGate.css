@@ -35,24 +35,49 @@ body {
       padding: 0;
       background: url("lobby.png") no-repeat right center fixed;
       background-size: cover;
-      border-right: 1px solid #f17f36;
       opacity: 0.4; }
-      body .gate .lobby .logo {
-        position: absolute;
-        background-color: #FFFFFF;
-        width: 70px;
-        height: 70px;
-        border: 1px solid #f17f36;
-        left: calc(70% - 35px);
-        top: 50px;
-        border-radius: 50% 50%; }
     body .gate .welcome {
       float: left;
       height: 100%;
       width: 30%;
       position: relative;
       z-index: 1;
-      background-color: #FFFFFF; }
+      background-color: #FFFFFF;
+      border-left: 1px solid #f17f36;
+      box-sizing: border-box; }
+      body .gate .welcome .logo {
+        /* ULTIMATE HALF-CIRLE HACK HERE*/
+        position: absolute;
+        background-color: #FFFFFF;
+        width: 70px;
+        height: 70px;
+        border: 1px solid #f17f36;
+        left: -35px;
+        top: 50px;
+        border-radius: 50% 50%;
+        opacity: 1;
+        z-index: 1;
+        border-right-color: white;
+        border-top-color: white;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg); }
+        body .gate .welcome .logo:before {
+          content: "";
+          position: absolute;
+          width: 70px;
+          height: 70px;
+          background-image: url("logolob.png");
+          background-size: 50%;
+          background-repeat: no-repeat;
+          background-position: center;
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
       body .gate .welcome .title {
         font-size: 34px;
         font-family: 'futurastd';

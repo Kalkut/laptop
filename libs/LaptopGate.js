@@ -5,9 +5,9 @@ sand.define('View/LaptopGate',['Seed','DOM/toDOM'], function (r) {
 
 			this.el = r.toDOM({
 				tag : ".gate",
-				children : [{tag : ".lobby", children : [".logo"]},{ 
+				children : [{tag : ".lobby", children : []},{ 
 					tag : ".welcome",
-					children : ['.title Bienvenue',{ 
+					children : [".logo",'.title Bienvenue',{ 
 						tag : '.add-pin', 
 						children : [{ 
 							tag : '.pin',
