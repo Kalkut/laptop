@@ -2,8 +2,11 @@ sand.define('View/Gate', ["Seed","DOM/toDOM"] , function (r) {
 	return r.Seed.extend({
 		
 		'+init' : function (o) {
+
+			if(!o) var o = {};
+
 			this.el = r.toDOM({
-				tag : ".title-screen",
+				tag : ".title-screen"+ (o.className ? "." + o.className : ""),
 				children : [".lob"+ (o.className ? "." + o.className : ""),
 				{
 					tag : ".arrow-bloc",
@@ -32,9 +35,11 @@ sand.define('View/Gate', ["Seed","DOM/toDOM"] , function (r) {
 						attr : {
 							value : (o.instruction || "")
 						}
-					}]
+					},'.left','.right','.middle']
 				}]
 			})
+
+			if(o.logo) this.scope['white-circle'].style.backgroundImage = o.logo;
 		}
 
 

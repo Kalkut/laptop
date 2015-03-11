@@ -22,93 +22,99 @@ font-face{
   src: url('/FuturaStdBold.otf') format('opentype'); 
 }
 
-.gate{
-    width : 100%;
-    height : 100%;
-    position: absolute;
-    font-family : 'futurastd';
-  .lobby{
-    float : left;
-    height : 100%;
-    width : 70%;
-    box-sizing : border-box;
-    margin: 0;
-    padding: 0; 
-    background: url("lobby.png") no-repeat right center fixed;
-    background-size: cover;
-    border-right: 1px solid #f17f36;
-    .logo{
+body {
+  margin : 0;
+  width: 100%;
+  height: 100%;
+  .gate{
+      width : 100%;
+      height : 100%;
       position: absolute;
-      background-color: #FFFFFF;
-      width: 70px;
-      height: 70px;
-      border: 1px solid #f17f36;
-      left : calc(70% - 35px);
-      top: 50px; 
-      border-radius : 50% 50%;
-    }
-  }
-  .welcome{
-    float : left;
-    height : 100%;
-    width : 30%;
-    position : relative;
-    z-index : 1;
-    background-color : #FFFFFF;
-    .title{
-      font-size : 34px;
       font-family : 'futurastd';
-      position : absolute;
-      left : 0;
-      right : 0;
-      margin : 0 auto;
-      color : #f17f36;
-      text-align : center;
-      top : 65px;
-    }
-    .add-pin{
-      position : absolute;
-      top : 44%;
-      margin : 0 auto;
-      left : 0;
-      right : 0;
-      width : 260px;
-      .pin{
-        .left{
-          width : 2px;
-          height: 25px;
-          background-color: #9d9d9d;
-          position: absolute;
-        }
-        input.text{
-          height: 30px;
-          font-family: 'futurastd';
-          font-size: 22px;
-          width: 176;
-          outline: none;
-          border: 0;
-          border-bottom : 2px solid #d0d0d0;
-          position: absolute;
-          left : 5px;
-          color : #cfcfcf;
-          padding-left: 1px;
-        }
-      }
-      .next{
-        background-image : url('nextI.png');
-        width: 60px;
-        height: 60px;
+    .lobby{
+      float : left;
+      height : 100%;
+      width : 70%;
+      box-sizing : border-box;
+      margin: 0;
+      padding: 0; 
+      background: url("lobby.png") no-repeat right center fixed;
+      background-size: cover;
+      border-right: 1px solid #f17f36;
+      opacity: 0.4;
+      .logo{
         position: absolute;
-        right: 0px;
-        background-size: 100%;
-        background-position: 0 15px;
-        background-repeat: no-repeat;
-        top : 0;
-        bottom: 0;
-        margin: auto 0;
+        background-color: #FFFFFF;
+        width: 70px;
+        height: 70px;
+        border: 1px solid #f17f36;
+        left : calc(70% - 35px);
+        top: 50px; 
+        border-radius : 50% 50%;
       }
-      .next.invalid{
-        opacity : 0.7;
+    }
+    .welcome{
+      float : left;
+      height : 100%;
+      width : 30%;
+      position : relative;
+      z-index : 1;
+      background-color : #FFFFFF;
+      .title{
+        font-size : 34px;
+        font-family : 'futurastd';
+        position : absolute;
+        left : 0;
+        right : 0;
+        margin : 0 auto;
+        color : #f17f36;
+        text-align : center;
+        top : 65px;
+      }
+      .add-pin{
+        position : absolute;
+        top : 44%;
+        margin : 0 auto;
+        left : 0;
+        right : 0;
+        width : 260px;
+        .pin{
+          .left{
+            width : 2px;
+            height: 25px;
+            background-color: #9d9d9d;
+            position: absolute;
+          }
+          input.text{
+            height: 30px;
+            font-family: 'futurastd';
+            font-size: 22px;
+            width: 176;
+            outline: none;
+            border: 0;
+            border-bottom : 2px solid #d0d0d0;
+            position: absolute;
+            left : 5px;
+            color : #cfcfcf;
+            padding-left: 1px;
+          }
+        }
+        .next{
+          background-image : url('nextI.png');
+          width: 60px;
+          height: 60px;
+          position: absolute;
+          right: 0px;
+          background-size: 100%;
+          background-position: 0 15px;
+          background-repeat: no-repeat;
+          top : 0;
+          bottom: 0;
+          margin: auto 0;
+        }
+        .next.invalid{
+          opacity : 0.7;
+        }
       }
     }
   }

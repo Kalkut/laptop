@@ -14,6 +14,8 @@
 
 body {
   margin: 0%;
+  width : 100%;
+  height: 100%;
   .title-screen{
     width : 100%;
     height : 100%;
@@ -31,15 +33,39 @@ body {
       font-size: 25px;
     }
     .touch{
-      top : 60.8%;
-      height: 39.2%;
-      position: absolute;
+      height: calc(52% - 47px);
+      float: left;
+      position: relative;
       width: 100%;
       z-index: -2;
       text-align: center;
       display: table;
       color: #666666;
-      pointer-events : auto;
+      pointer-events: auto;
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        height: calc(100% - 72px);
+      }
+      @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+        height: calc(100% - 72px);
+      }
+      @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+        height: calc(100% - 72px);
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+        height: calc(100% - 72px);
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+        height: calc(100% - 72px);
+      }
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        height : calc(100% - 508px - 72px);
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px)  and (orientation : portrait) {
+        height : calc(100% - 197px - 72px)
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { /*Iphone 5*/
+        height : calc(100% - 239px - 72px)
+      }
       .instruction{
         display: table-cell;
         /* vertical-align: middle; */
@@ -54,7 +80,7 @@ body {
         font-smoothing: antialiased;
         -moz-font-smoothing: antialiased;
         outline: none;
-        width: 240px;
+        width: 250px;
         height: 60px;
         color: #666666;
         text-align: center;
@@ -72,17 +98,20 @@ body {
       background-position: center center;
       float : left;
       opacity: 0.4;
-      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
-        background-size: 178px 120px;
-        height : 120px;
-      }
-      @media only screen and (min-device-width : 320px) and (max-device-width : 480px)  and (orientation : landscape) {
-        background-size: 178px 120px;
-        height : 120px;
-      }
       @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-        background-size: 220px 149px;
-        height : 149px;
+        display: none;
+      }
+      @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+        display: none;
+      }
+      @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+        display: none;
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+        display: none;
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+        display: none;
       }
       @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
         background-size: 768px 508px;
@@ -95,6 +124,12 @@ body {
       @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { /*Iphone 5*/
         background-size: 353px 239px;
         height : 239px;
+      }
+      @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait) {
+        background-size : 375px 253px;
+      }
+      @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) {
+        background-size : 414px 280px;
       }
     }
     .lob.market{
@@ -111,13 +146,33 @@ body {
     .lob.tableau{
       background-image: url('/TableauHR.png');
     }
+    .lob.lobby{
+      background-image : url('/lobby.png');
+    }
     .arrow-bloc{
       float: left;
       width: 100%;
       height : 72px;
       position: relative;
       background-color: #ffffff;
-      border: 1px solid #f17f36;
+      border-top: 1px solid #f17f36;
+      border-bottom : 1px solid #f17f36;
+      box-sizing: border-box;
+      @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        border-top : 0;
+      }
+      @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+        border-top : 0;
+      }
+      @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+        border-top : 0;
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+        border-top : 0;
+      }
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+        border-top : 0;
+      }
       .rect{
         color : #f17f36;
         border : #f17f36;
@@ -147,7 +202,7 @@ body {
         width: 50px;
         height: 27px;
         border-bottom: 2px solid #ffffff;
-        top: -27px;
+        top: -25px;
         background-image: url("/hCircle.png");
         margin-left: auto;
         margin-right: auto;
@@ -159,6 +214,24 @@ body {
         position: absolute;
         left: 0;
         right: 0;
+        box-sizing: border-box;
+
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+          display: none;          
+        }
+        @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+          display: none;
+        }
+
       }
       .white-circle {
         width: 45px;
@@ -167,11 +240,26 @@ body {
         position: absolute;
         background-color: white;
         border-radius: 50%;
-        top: -26px;
+        top: -23px;
         margin: 0 auto;
         left: 0;
         right: 0;
         background-image: url("/down.png");
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+          display: none;          
+        }
+        @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+          display: none;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+          display: none;
+        }
       }
       .down{
         width: 27px;
@@ -198,10 +286,60 @@ body {
         /* z-index: -1; */
         position: absolute;
         border-top: 2px solid #ffffff;
-        top: 70px;
+        top: 68px;
         left: 0;
         right: 0;
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+          top : 69px          
+        }
+        @media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+          top : 69px
+        }
+        @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+          top : 69px
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+          top : 69px
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) {
+          top : 69px
+        }
       }
+    }
+  }
+  .title-screen.lobby{
+    .left {
+      height: 100%;
+      background-size : contain;
+      width: 33%;
+      position : absolute;
+      left : 0;
+      background-image : url('left.png');
+      background-repeat : no-repeat;
+    }
+    .right {
+      height: 100%;
+      background-size: contain;
+      width: 20%;
+      position: absolute;
+      right: 0;
+      background-image: url("right.png");
+      background-repeat: no-repeat;
+    }
+    .middle {
+      height: 100%;
+      background-size : contain;
+      width: 33%;
+      position : absolute;
+      right : 33%;
+      background-image : url('middle.png');
+      background-repeat : no-repeat;
+    }
+    .white-circle {
+      background-image : url('logolob.png');
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
